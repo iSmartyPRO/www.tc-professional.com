@@ -1,0 +1,30 @@
+{
+  "desktopClass": "",
+  "mobileClass": "",
+  "list": [
+    {
+      "name": "Home",
+      "displayName": "Главная"
+    },
+    {
+      "name": "About",
+      "displayName": "О нас"
+    },
+    {
+      "name": "Services",
+      "displayName": "Услуги"
+    },
+    {
+      "name": "Programs",
+      "displayName": "Программы обучения"
+    },
+    {
+      "name": "Price",
+      "displayName": "Стоимость"
+    },
+    {
+      "name": "Contacts",
+      "displayName": "Контакты"
+    }
+  ]
+}

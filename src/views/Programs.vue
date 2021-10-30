@@ -1,6 +1,5 @@
 <template>
-  <SlideShow :slides="slides"></SlideShow>
-  <ListServices
+<ListServices
     title="ОБУЧЕНИЕ И АТТЕСТАЦИЯ<br />РУКОВОДИТЕЛЕЙ И СПЕЦИАЛИСТОВ"
     description="<p>
           Аттестация по охране труда обязательна для руководителей и
@@ -19,38 +18,27 @@
         </p>"
     :list="eduWorkers">
   </ListServices>
-
-
-
 </template>
 
 <script>
-import SlideShow from "../components/SlideShow.vue"
 import ListServices from "../components/ListServices.vue"
-
-import slides from "../data/slides.json";
 
 import eduManagers from "../data/eduManagers.json"
 import eduWorkers from "../data/eduWorkers.json"
 
 export default {
-  name: "Home",
-  components: {SlideShow, ListServices},
+  name: "Programs",
+  components: {ListServices},
   data() {
     return {
-      slides,
       eduManagers,
       eduWorkers
-    };
-  }
-};
+    }
+
+}
+}
 </script>
 
 <style>
-.uk-text-black {
-  color: #000 !important;
-}
-.logo-small {
-  width: 150px;
-}
+
 </style>

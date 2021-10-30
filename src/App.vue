@@ -1,30 +1,45 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <Nav :menus="menus" @menuName="handleMenuName"/>
+  <div class="uk-container pageHeight uk-margin-large-top" v-if="currentPage !== 'Home'">
+    <router-view/>
   </div>
-  <router-view/>
+  <router-view v-else/>
+  <Footer></Footer>
 </template>
 
+<script>
+import UIkit from 'uikit'
+import UIkitss from 'uikit/dist/css/uikit.css'
+import Icons from 'uikit/dist/js/uikit-icons'
+import 'font-awesome/css/font-awesome.css'
+import Footer from "./views/Footer.vue"
+
+UIkit.use(Icons)
+
+import Nav from "./components/Nav.vue"
+import menuJSON from "./data/menus.json"
+
+export default {
+  name: 'App',
+  components: { Nav, Footer },
+  data() {
+    return {
+      menus: menuJSON,
+      currentPage: this.$route.name ? this.$route.name : 'Home'
+    }
+  },
+  methods: {
+    handleMenuName(name){
+      this.currentPage = name
+    }
+  }
+
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  .pageHeight {
+    min-height: 500px;
+  }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
